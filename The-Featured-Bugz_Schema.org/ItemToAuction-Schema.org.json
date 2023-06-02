@@ -1,0 +1,28 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "ItemToAuction",
+   "description": "An item for auction",
+   "type": "object",
+	
+   "properties": {
+	
+      "ItemID": {
+         "description": "The unique identifier for an item",
+         "type": "integer"
+      },
+		
+      "ItemStartPrice": {
+         "description": "Start price of the item when it is put up for auction. Must not be less than 1.",
+         "type": "integer",
+         "minimum": 1
+      },
+		
+      "ItemEndDate": {
+         "description": "The date and time when the auction ends. Bidding is no longer allowed after this time.",
+         "type": "string",
+         "format": "date-time"
+      }
+   },
+	
+   "required": ["ItemID", "ItemStartPrice", "ItemEndDate"]
+}

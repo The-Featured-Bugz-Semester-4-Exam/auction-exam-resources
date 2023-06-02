@@ -1,0 +1,23 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "LoginModel",
+   "description": "A model for user login",
+   "type": "object",
+	
+   "properties": {
+	
+      "UserName": {
+         "description": "The username for logging in",
+         "type": "string",
+         "default": ""
+      },
+		
+      "UserPassword": {
+         "description": "The password for logging in",
+         "type": "string",
+         "default": ""
+      }
+   },
+	
+   "required": ["UserName", "UserPassword"]
+}

@@ -1,0 +1,59 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "Item",
+   "description": "An item for auction",
+   "type": "object",
+	
+   "properties": {
+	
+      "MongoId": {
+         "description": "The unique ID used to identify the item in the MongoDB database",
+         "type": "string"
+      },
+		
+      "ItemID": {
+         "description": "The identifier that makes the item unique",
+         "type": "integer"
+      },
+		
+      "ItemName": {
+         "description": "The name of the item",
+         "type": "string"
+      },
+		
+      "ItemDescription": {
+         "description": "A description of the item",
+         "type": "string"
+      },
+		
+      "ItemStartPrice": {
+         "description": "The starting price of the item",
+         "type": "integer"
+      },
+		
+      "ItemCurrentBid": {
+         "description": "The current bid on the item",
+         "type": "integer",
+         "default": -1
+      },
+		
+      "ItemSellerID": {
+         "description": "The ID of the user who is selling the item",
+         "type": "integer"
+      },
+		
+      "ItemStartDate": {
+         "description": "The date and time when the item starts on auction",
+         "type": "string",
+         "format": "date-time"
+      },
+		
+      "ItemEndDate": {
+         "description": "The date and time when the item ends on auction",
+         "type": "string",
+         "format": "date-time"
+      }
+   },
+	
+   "required": ["ItemID", "ItemName", "ItemDescription", "ItemStartPrice", "ItemSellerID", "ItemStartDate", "ItemEndDate"]
+}

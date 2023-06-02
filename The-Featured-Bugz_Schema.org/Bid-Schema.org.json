@@ -1,0 +1,32 @@
+{
+   "$schema": "http://json-schema.org/draft-04/schema#",
+   "title": "Bid",
+   "description": "A bid on an auction",
+   "type": "object",
+	
+   "properties": {
+	
+      "BidID": {
+         "description": "The unique identifier for a bid",
+         "type": "integer"
+      },
+		
+      "AuctionID": {
+         "description": "The ID of the auction that the user is bidding on",
+         "type": "integer"
+      },
+		
+      "BidPrice": {
+         "description": "The bid price, which must not be less than or equal to the current price of the auction",
+         "type": "integer",
+         "exclusiveMinimum": true
+      },
+		
+      "BidUserID": {
+         "description": "The user who is placing the bid on the auction",
+         "type": "integer"
+      }
+   },
+	
+   "required": ["BidID", "AuctionID", "BidPrice", "BidUserID"]
+}
