@@ -1,0 +1,108 @@
+version: '3'
+services:
+  rabbitmq-service:
+    image: rabbitmq:3.11-management
+    ports:
+      - 5672:5672
+    expose:
+      - "80"
+    networks:
+      - testNetwork
+
+  redis-service:
+    image: redis:latest
+    ports:
+      - 6379:6379
+    expose:
+      - "80"
+    networks:
+      - testNetwork
+
+  auction-service:
+    image: jacob360420/auction-service:latest
+    ports:
+      - 5158:80
+    environment:
+      - redisConnection=redis-service:6379
+      - rabbitmqUrl=rabbitmq-service
+      - rabbitmqPort=5672
+      - ValidAudience=http://authentication-service:80
+    expose:
+      - "80"
+    networks:
+      - testNetwork
+  mongodb:
+    image: mongo:latest
+    restart: always
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
+    expose:
+      - "80"
+    networks:
+      - testNetwork
+  user-service:
+    image: jacob360420/user-service:latest-dev
+    ports:
+      - 5081:80
+    environment:
+      - connectionString=mongodb://mongodb:27017/
+      - userCol=userCol
+      - database=Auction
+    expose:
+      - "80"
+    networks:
+      - testNetwork
+  authentication-service:
+    image: jacob360420/authentication-service:latest-dev
+    ports:
+      - 5152:80
+    environment:
+      - Secret=mySecretIsASecret
+      - Issuer=myIssuerIsAnIssue
+      - apiGetUser=user-service:80/user/GetUser
+      - ValidAudience=http://authentication-service:80
+    expose:
+      - "80"
+    networks:
+      - testNetwork
+  catalog-service:
+    image: jacob360420/catalog-service:latest-dev
+    ports:
+      - 5098:80
+    environment:
+      - connectionString=mongodb://mongodb:27017/
+      - collection=Items
+      - connAuk=http://auction-service:80
+      - database=ItemsDB
+    networks:
+      - testNetwork
+  bid-service:
+    image: jacob360420/bid-service:latest
+    environment:
+      - connectMongodb=mongodb://mongodb:27017/
+      - database=Auction
+      - auctionBidCol=auctionBidCol
+      - rabbitmqUrl=rabbitmq-service
+      - rabbitmqPort=5672
+    networks:
+      - testNetwork
+  loki:
+    image: grafana/loki:latest
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/local-config.yaml
+    networks:
+      - testNetwork
+
+  grafana:
+    image: grafana/grafana:latest
+    ports:
+      - "3000:3000"
+    networks:
+      - testNetwork
+
+networks:
+  testNetwork:
+    driver: bridge
