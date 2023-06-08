@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "ab103ae3-118f-483c-97be-5b897a53af23",
+		"_postman_id": "15036032-b6c2-401d-b727-c0cc7ede0835",
 		"name": "The-Featured-Bugz-Semester-4-Exam_Docker-Desktop",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "17557496"
@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"ItemID\": 1,\r\n    \"ItemStartPrice\": 100,\r\n    \"ItemEndDate\": \"2023-06-15T18:00:00Z\"\r\n  },\r\n  {\r\n    \"ItemID\": 2,\r\n    \"ItemStartPrice\": 200,\r\n    \"ItemEndDate\": \"2023-06-20T12:30:00Z\"\r\n  },\r\n  {\r\n    \"ItemID\": 44,\r\n    \"ItemStartPrice\": 150,\r\n    \"ItemEndDate\": \"2023-06-18T20:45:00Z\"\r\n  }\r\n]\r\n",
+							"raw": "[\r\n  {\r\n    \"ItemID\": 1,\r\n    \"ItemStartPrice\": 100,\r\n    \"ItemEndDate\": \"2023-06-15T18:00:00Z\"\r\n  }\r\n]\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -130,7 +130,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"ItemID\": 1,\r\n    \"ItemStartPrice\": 100,\r\n    \"ItemEndDate\": \"2023-06-15T18:00:00Z\"\r\n  },\r\n  {\r\n    \"ItemID\": 2,\r\n    \"ItemStartPrice\": 200,\r\n    \"ItemEndDate\": \"2023-06-20T12:30:00Z\"\r\n  },\r\n  {\r\n    \"ItemID\": 3,\r\n    \"ItemStartPrice\": 150,\r\n    \"ItemEndDate\": \"2023-06-18T20:45:00Z\"\r\n  }\r\n]\r\n",
+							"raw": "[\r\n  {\r\n    \"ItemID\": 1,\r\n    \"ItemStartPrice\": 100,\r\n    \"ItemEndDate\": \"2023-06-15T18:00:00Z\"\r\n  }\r\n]\r\n",
 							"options": {
 								"raw": {
 									"language": "json"

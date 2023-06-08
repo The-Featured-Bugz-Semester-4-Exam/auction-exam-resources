@@ -16,7 +16,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"ItemID\": 1,\r\n    \"ItemStartPrice\": 100,\r\n    \"ItemEndDate\": \"2023-06-15T18:00:00Z\"\r\n  },\r\n  {\r\n    \"ItemID\": 2,\r\n    \"ItemStartPrice\": 200,\r\n    \"ItemEndDate\": \"2023-06-20T12:30:00Z\"\r\n  },\r\n  {\r\n    \"ItemID\": 44,\r\n    \"ItemStartPrice\": 150,\r\n    \"ItemEndDate\": \"2023-06-18T20:45:00Z\"\r\n  }\r\n]\r\n",
+							"raw": "[\r\n  {\r\n    \"ItemID\": 1,\r\n    \"ItemStartPrice\": 100,\r\n    \"ItemEndDate\": \"2023-06-15T18:00:00Z\"\r\n  }\r\n]\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -142,7 +142,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "[\r\n  {\r\n    \"ItemID\": 1,\r\n    \"ItemStartPrice\": 100,\r\n    \"ItemEndDate\": \"2023-06-15T18:00:00Z\"\r\n  },\r\n  {\r\n    \"ItemID\": 2,\r\n    \"ItemStartPrice\": 200,\r\n    \"ItemEndDate\": \"2023-06-20T12:30:00Z\"\r\n  },\r\n  {\r\n    \"ItemID\": 3,\r\n    \"ItemStartPrice\": 150,\r\n    \"ItemEndDate\": \"2023-06-18T20:45:00Z\"\r\n  }\r\n]\r\n",
+							"raw": "[\r\n  {\r\n    \"ItemID\": 1,\r\n    \"ItemStartPrice\": 100,\r\n    \"ItemEndDate\": \"2023-06-15T18:00:00Z\"\r\n  }\r\n]\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -391,12 +391,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:5152/auth/login",
+							"raw": "http://13.68.145.202:4000/auth/login",
 							"protocol": "http",
 							"host": [
-								"localhost"
+								"13",
+								"68",
+								"145",
+								"202"
 							],
-							"port": "5152",
+							"port": "4000",
 							"path": [
 								"auth",
 								"login"
